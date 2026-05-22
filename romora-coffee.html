@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steerf Coffee ROMORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f7f5f2;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #3b2416;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+            nav a:hover {
+                color: #d8a15d;
+            }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 8%;
+            gap: 40px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+            .hero-text h1 {
+                font-size: 60px;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            .hero-text p {
+                margin-bottom: 30px;
+                font-size: 20px;
+                max-width: 600px;
+            }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #d8a15d;
+            color: white;
+        }
+
+            .btn-primary:hover {
+                background: #c68f4a;
+                transform: translateY(-3px);
+            }
+
+        .btn-secondary {
+            background: white;
+            color: #3b2416;
+        }
+
+            .btn-secondary:hover {
+                background: #ececec;
+                transform: translateY(-3px);
+            }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+            .section-title h2 {
+                font-size: 42px;
+                color: #3b2416;
+                margin-bottom: 10px;
+            }
+
+        .about {
+            background: white;
+        }
+
+            .about p {
+                max-width: 900px;
+                margin: auto;
+                text-align: center;
+                font-size: 18px;
+            }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+            .menu-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .menu-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+
+        .menu-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+            .menu-content h3 {
+                color: #3b2416;
+                margin-bottom: 10px;
+            }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 25px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+            .why-card:hover {
+                transform: translateY(-8px);
+            }
+
+            .why-card h3 {
+                margin-bottom: 10px;
+                color: #3b2416;
+            }
+
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+            gap: 25px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+            .testimonial:hover {
+                transform: translateY(-8px);
+            }
+
+            .testimonial h4 {
+                margin-top: 15px;
+                color: #3b2416;
+            }
+
+        .cta {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+            margin: 0 8% 80px;
+            padding: 90px 30px;
+        }
+
+            .cta h2 {
+                font-size: 45px;
+                margin-bottom: 20px;
+            }
+
+        footer {
+            background: #22140c;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+            footer p {
+                margin: 8px 0;
+            }
+
+        @media(max-width:768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">ROMORA Coffee</div>
+
+        <nav>
+            <a href="#about">Tentang</a>
+            <a href="#menu">Menu</a>
+            <a href="#why">Keunggulan</a>
+            <a href="#testi">Testimoni</a>
+        </nav>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>Nikmati Kopi Berkualitas dengan Suasana Nyaman</h1>
+
+            <p>
+                Steerf Coffee ROMORA menghadirkan kopi premium,
+                minuman kekinian, dan tempat nongkrong nyaman
+                untuk ngechill bareng teman teman.
+            </p>
+
+            <div class="btn-group">
+                <a href="#menu" class="btn btn-primary">Lihat Menu</a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>Tentang Kami</h2>
+            <p>Kenalan dengan Steerf Coffee ROMORA</p>
+        </div>
+
+        <p>
+            Steerf Coffee ROMORA adalah street coffee shop yang menghadirkan
+            pengalaman menikmati kopi dengan cita rasa terbaik.
+            Kami menggunakan biji kopi pilihan dan bahan berkualitas
+            untuk memberikan rasa yang konsisten dan memuaskan pelanggan.
+        </p>
+
+    </section>
+
+    <section id="menu">
+
+        <div class="section-title">
+            <h2>Menu Favorit</h2>
+            <p>Minuman dan makanan favorit pelanggan</p>
+        </div>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="menu-content">
+                    <h3>Espresso Premium</h3>
+                    <p>Kopi dengan rasa kuat dan aroma khas.</p>
+                </div>
+
+            </div>
+
+            <div class="menu-card">
+
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="menu-content">
+                    <h3>Cappuccino Creamy</h3>
+                    <p>Perpaduan espresso dan susu creamy.</p>
+                </div>
+
+            </div>
+
+            <div class="menu-card">
+
+                <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="menu-content">
+                    <h3>Matcha Latte</h3>
+                    <p>Minuman matcha premium yang menyegarkan.</p>
+                </div>
+
+            </div>
+
+            <div class="menu-card">
+
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="menu-content">
+                    <h3>Signature Ice Coffee</h3>
+                    <p>Menu andalan dengan cita rasa khas ROMORA.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="why">
+
+        <div class="section-title">
+            <h2>Kenapa Memilih Kami?</h2>
+            <p>Keunggulan yang membuat pelanggan nyaman</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <h3>☕ Tempat Nyaman</h3>
+                <p>Desain modern dan estetik untuk nongkrong maupun belajar.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>💰 Harga Terjangkau</h3>
+                <p>Harga ramah mahasiswa dengan kualitas premium.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>📶 Free WiFi</h3>
+                <p>Koneksi internet cepat untuk kebutuhan kerja dan tugas.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="testi">
+
+        <div class="section-title">
+            <h2>Testimoni Pelanggan</h2>
+            <p>Review dari pelanggan kami</p>
+        </div>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial">
+                <p>
+                    “Tempatnya nyaman banget buat nugas dan kopinya enak!”
+                </p>
+                <h4>— Andi</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    “Harga murah tapi kualitas premium. Recommended!”
+                </p>
+                <h4>— Rina</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    “Pelayanannya cepat dan suasananya cozy banget.”
+                </p>
+                <h4>— Dimas</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta">
+
+        <h2>Yuk Nongkrong dan Nikmati Kopi Favoritmu!</h2>
+
+        <p>
+            Datang sekarang dan rasakan pengalaman menikmati
+            kopi terbaik bersama teman dan keluarga.
+        </p>
+
+        <br><br>
+
+        <a href="#contact" class="btn btn-primary">Order Sekarang</a>
+
+    </section>
+
+    <footer id="contact">
+
+        <p><strong>Steerf Coffee ROMORA</strong></p>
+
+        <p>Instagram: @romoracoffee</p>
+
+        <p>WhatsApp: 08xxxxxxxxxx</p>
+
+        <p>Alamat: Jl. Kalisahak, Yogyakarta, Indonesia</p>
+
+        <p>© 2026 ROMORA Coffee. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
